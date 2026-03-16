@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de Mensajes Públicos</title>
+    <!-- Pico.css para estilos rápidos y elegantes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><strong><a href="/" class="contrast">Muro Público</a></strong></li>
+            </ul>
+            <ul id="nav-auth">
+                <!-- Se llenará dinámicamente según sesión -->
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Bienvenidos al Foro</h1>
+        
+        <div id="post-section" style="display: none;">
+            <article>
+                <form id="post-form">
+                    <fieldset>
+                        <label for="message-input">¿Qué estás pensando?</label>
+                        <textarea id="message-input" name="message" placeholder="Escribe tu mensaje aquí..." required maxlength="500"></textarea>
+                        <small>Máximo 500 caracteres.</small>
+                    </fieldset>
+                    <button type="submit">Publicar Mensaje</button>
+                    <div id="post-error" style="color: red; margin-top: 10px;"></div>
+                </form>
+            </article>
+        </div>
+
+        <section id="messages-container" aria-busy="true">
+            <!-- Mensajes cargarán aquí -->
+        </section>
+    </main>
+
+    <footer class="container">
+        <small>Hackathon Project - Foro de Mensajes</small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

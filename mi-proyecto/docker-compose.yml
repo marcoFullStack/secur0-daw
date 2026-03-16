@@ -1,18 +1,17 @@
+version: '3.8'
+
 services:
-  # Servicio del Backend (Node.js, Python, PHP...)
-  api:
-    build: ./backend
+  foro-backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"  # Mapea el puerto 3000 del contenedor al 3000 de tu PC
-    volumes:
-      - ./backend:/app # Sincroniza tu código para ver cambios en vivo
+      - "3000:3000"
     environment:
       - NODE_ENV=production
-
-  # Servicio del Frontend (Servidor web sencillo)
-  web:
-    image: nginx:alpine
-    ports:
-      - "8080:80"    # Entrarás a tu app desde http://localhost:8080
+      - PORT=3000
     volumes:
-      - ./frontend:/usr/share/nginx/html # Sirve tus archivos HTML/JS
+      - ./frontend:/usr/src/frontend # Montamos el frontend para que Express lo sirva estáticamente
+      - ./backend:/usr/src/app # Montamos el backend para desarrollo
+      # Nota: En un entorno de producción real, el frontend se copiaría dentro de una imagen de Nginx
+      # y no se montarían volúmenes locales de código, pero para este Hackathon esto facilita la evaluación.

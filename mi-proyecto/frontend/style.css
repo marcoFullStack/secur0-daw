@@ -1,0 +1,50 @@
+/* Custom styling overrides and specific utility classes */
+.alert-message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.error-message {
+    color: var(--pico-del-color);
+    margin-top: 1rem;
+}
+
+.success-message {
+    color: var(--pico-ins-color);
+}
+
+.message-card {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--pico-muted-border-color);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--pico-muted-color);
+}
+
+.message-content {
+    font-size: 1.1rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.delete-btn {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    background-color: transparent;
+    border: 1px solid var(--pico-del-color);
+    color: var(--pico-del-color);
+    margin: 0;
+    width: auto;
+}
+
+.delete-btn:hover {
+    background-color: var(--pico-del-color);
+    color: white;
+}

@@ -1,18 +1,19 @@
-# Usa una imagen ligera de Node
-FROM node:18-alpine
+FROM node:20-alpine
 
-# Crea el directorio de trabajo
-WORKDIR /app
+# Create app directory
+WORKDIR /usr/src/app
 
-# Copia los archivos de dependencias y las instala
+# Copy package.json and package-lock.json
 COPY package*.json ./
+
+# Install app dependencies
 RUN npm install
 
-# Copia el resto del código
+# Bundle app source
 COPY . .
 
-# Expone el puerto que usa tu app
+# Expose port
 EXPOSE 3000
 
-# Comando para arrancar la app
-CMD ["node", "app.js"]
+# Start server
+CMD [ "node", "server.js" ]

@@ -1,0 +1,21 @@
+# Dependencias de Node (Ruta específica que mencionaste)
+# miproyecto/backend/node_modules/
+**/node_modules/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Entorno y Secretos (¡MUY IMPORTANTE!)
+.env
+.env.local
+
+# Base de datos SQLite (si se genera en el backend)
+miproyecto/backend/*.sqlite
+miproyecto/backend/*.db
+
+# Archivos de sistema y editores
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

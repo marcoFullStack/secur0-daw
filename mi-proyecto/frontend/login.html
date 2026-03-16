@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Foro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <article class="grid">
+            <div>
+                <hgroup>
+                    <h1>Iniciar Sesión</h1>
+                    <p>Ingresa para publicar en el muro.</p>
+                </hgroup>
+                <form id="login-form">
+                    <input type="text" name="username" placeholder="Nombre de usuario" aria-label="Nombre de usuario" required>
+                    <input type="password" name="password" placeholder="Contraseña" aria-label="Contraseña" required>
+                    <button type="submit">Entrar</button>
+                    <div id="login-error" class="error-message"></div>
+                </form>
+                <p><small>¿No tienes cuenta? <a href="register.html">Regístrate</a></small></p>
+                <p><small><a href="/">Volver al muro</a></small></p>
+            </div>
+        </article>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
